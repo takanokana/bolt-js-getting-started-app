@@ -49,6 +49,10 @@ app.event('team_join', async ({ event, client }) => {
     console.error(error)
   }
 })
+app.command('/test', async ({ body, ack, say }) => {
+  await ack()
+  await say('ok?')
+})
 ;(async () => {
   // Start your app
   await app.start(process.env.PORT || 3000)
